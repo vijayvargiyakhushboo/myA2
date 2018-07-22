@@ -1,0 +1,9 @@
+<h2>Add Item</h2>
+<form (submit)="addItem()">
+	<input type="text" name="myText" [(ngModel)]="text">
+</form>
+<h4>List</h4>
+ <ul>
+ 	<li *ngFor="let l of list">{{l.text}}</li>
+ </ul>
+
