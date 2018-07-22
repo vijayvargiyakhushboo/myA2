@@ -1,9 +1,20 @@
-<h2>Add Item</h2>
-<form (submit)="addItem()">
-	<input type="text" name="myText" [(ngModel)]="text">
-</form>
+
+<div *ngIf="state=='default'">
+	<h2>Add Item</h2>
+	<form (submit)="addItem()">
+		<input type="text" name="myText" [(ngModel)]="text">
+	</form>
+</div>
+
+<div *ngIf="state=='edit'">
+	<h2>Update Item</h2>
+	<form (submit)="updateItem()">
+		<input type="text" name="myText" [(ngModel)]="text">
+	</form>
+</div>
+
 <h4>List</h4>
  <ul>
- 	<li *ngFor="let l of list">{{l.text}}</li>
+ 	<li *ngFor="let l of list"><span (click)="editItem(l)">{{l.text}} </span><button (click)="deleteItem(l.text)">X</button></li>
  </ul>
 
