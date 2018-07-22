@@ -20,12 +20,20 @@ text;
   	];
   }
 
-  	addItem(){
-  console.log(this.text);
-  this.list.push({
-  	text: this.text
-  })
+  addItem(){
+  	console.log(this.text);
+  	this.list.push({
+  		text: this.text
+  	})
+  }
+
+  deleteItem(item){
+  	for (var i = 0; i <this.list.length; i++) {
+  		if(this.list[i].text == item){
+  			this.list.splice(i,1);
   	}
+  }
   
 
+}
 }

@@ -4,6 +4,6 @@
 </form>
 <h4>List</h4>
  <ul>
- 	<li *ngFor="let l of list">{{l.text}}</li>
+ 	<li *ngFor="let l of list">{{l.text}} <button (click)="deleteItem(l.text)">X</button></li>
  </ul>
 
